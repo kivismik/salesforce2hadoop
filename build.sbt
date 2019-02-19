@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
   "com.force.api"               % "force-partner-api" % "45.0.0",
   "co.datadudes"                %% "wsdl2avro"        % "0.2.1",
   "org.kitesdk"                 % "kite-hadoop-cdh5-dependencies" % "1.0.0" pomOnly()
+    exclude("commons-beanutils", "commons-beanutils-core")
     exclude("commons-beanutils", "commons-beanutils")
     exclude("org.slf4j", "slf4j-log4j12"),
   "org.kitesdk"                 % "kite-data-core"    % "1.0.0",
