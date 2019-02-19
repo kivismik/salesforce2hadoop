@@ -14,8 +14,8 @@ libraryDependencies ++= Seq(
   "org.slf4j"                   % "slf4j-api"         % "1.7.10",
   "org.scala-lang.modules"      %% "scala-xml"        % "1.0.2",
   "org.apache.avro"             % "avro"              % "1.7.5",
-  "com.force.api"               % "force-wsc"         % "33.0.1" exclude("org.antlr", "ST4"),
-  "com.force.api"               % "force-partner-api" % "33.0.1",
+  "com.force.api"               % "force-wsc"         % "45.0.0" exclude("org.antlr", "ST4"),
+  "com.force.api"               % "force-partner-api" % "45.0.0",
   "co.datadudes"                %% "wsdl2avro"        % "0.2.1",
   "org.kitesdk"                 % "kite-hadoop-cdh5-dependencies" % "1.0.0" pomOnly()
     exclude("commons-beanutils", "commons-beanutils")
