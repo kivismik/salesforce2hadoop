@@ -12,6 +12,6 @@ object AvroUtils {
 
   def filterSFInternalFields(node: BasicNode): Boolean = node.xmlType.endsWith("QueryResult") ||
     node.xmlType.startsWith("ens:") || node.name.endsWith("__r") || node.name.endsWith("__pr") ||
-    node.name.startsWith("fieldsToNull") || node.xmlType.startsWith("tns:address")
+    node.name.startsWith("fieldsToNull") || node.xmlType.startsWith("tns:address") || node.name.equalsIgnoreCase("MasterRecordId")
 
 }

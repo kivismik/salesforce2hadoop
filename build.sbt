@@ -2,7 +2,7 @@ name := "salesforce2hadoop"
 
 organization := "co.datadudes"
 
-version := "1.2"
+version := "1.3"
 
 scalaVersion := "2.11.4"
 
@@ -14,8 +14,8 @@ libraryDependencies ++= Seq(
   "org.slf4j"                   % "slf4j-api"         % "1.7.10",
   "org.scala-lang.modules"      %% "scala-xml"        % "1.0.2",
   "org.apache.avro"             % "avro"              % "1.7.5",
-  "com.force.api"               % "force-wsc"         % "45.0.0" exclude("org.antlr", "ST4"),
-  "com.force.api"               % "force-partner-api" % "45.0.0",
+  "com.force.api"               % "force-wsc"         % "47.0.0" exclude("org.antlr", "ST4"),
+  "com.force.api"               % "force-partner-api" % "47.0.0",
   "co.datadudes"                %% "wsdl2avro"        % "0.2.1",
   "org.kitesdk"                 % "kite-hadoop-cdh5-dependencies" % "1.0.0" pomOnly()
     exclude("commons-beanutils", "commons-beanutils-core")
@@ -33,9 +33,9 @@ net.virtualvoid.sbt.graph.Plugin.graphSettings
 
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", "maven", "org.slf4j", "slf4j-api", xs @ _*) => MergeStrategy.first
-  case "org/apache/hadoop/yarn/factories/package-info.class"          => MergeStrategy.first
-  case "org/apache/hadoop/yarn/factory/providers/package-info.class"  => MergeStrategy.first
-  case "org/apache/hadoop/yarn/util/package-info.class"               => MergeStrategy.first
+  case PathList("org", "apache", "hadoop", "yarn", "factories", "package-info.class") => MergeStrategy.first
+  case PathList("org", "apache", "hadoop", "yarn", "factory", "providers", "package-info.class") => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith "package-info.class" => MergeStrategy.first
   case PathList("org", "apache", "commons", "collections", xs @ _*)   => MergeStrategy.first
   case x =>
     val oldStrategy = (assemblyMergeStrategy in assembly).value
